@@ -1,0 +1,41 @@
+import java.io.*;
+
+class process {
+	public static void main (String[] args) {
+		String input1 = "Fruits like Mango and Apple are common but grapes are rare";
+		int num = 39;
+		String[] words = input1.split(" ");
+		int b1 = num/10;
+		int b2 = num%10;
+		String a1 = words[b1-1];
+		String a2 = words[b2-1];
+		int l = a1.length();
+		int l1 = a2.length();
+		String s3,s32,s4,s42;
+		
+		if(l%2==0){
+		    s3 = (a1.substring(0,l/2));
+		    s32 = (a1.substring(l/2,l));
+		}
+		else{
+		    s3 = (a1.substring(0,(l/2)+1));
+		    s32 = (a1.substring((l/2),l));
+		}
+		StringBuffer s = new StringBuffer(s3);
+		StringBuffer s1 = s.reverse();
+		
+		if(l1%2==0){
+		    s4 = (a2.substring(0,l1/2));
+		    s42 = (a2.substring(l1/2,l1));
+		}
+		else{
+		    s4 = (a2.substring(0,(l1/2)+1));
+		    s42 = (a2.substring((l1/2),l1));
+		}
+		
+		StringBuffer s2 = new StringBuffer(s4);
+		StringBuffer s22 = s2.reverse();
+		String res = s1+s32+" "+s22+s42;
+		System.out.println(res);
+	}
+}
